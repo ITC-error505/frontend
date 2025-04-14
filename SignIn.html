@@ -3,46 +3,77 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--Google material symbols-->
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
         <link rel="stylesheet" href="style.css" />
-        <script src="/script.js" defer></script>
+        <script src="script.js" defer></script>
 
         <!--Pixel Font-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
 
-        <!--Google material symbols-->
-        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-
         <title>SignIn</title>
     </head>
     <body>
-        <div class = "neon pink">
-            <div class = "neon blue">
-                <div class = content>
-                    <span class = "material-symbols-outlined arrow_back"><a href="index.html">arrow_back</a></span>
-                    <div class = "title">
-                        Sign In
+         <!-- Moving Background Script -->
+         <script   src="https://code.jquery.com/jquery-3.7.1.js"></script>
+         <script type = "text/javascript">
+             $(function() {
+                 var move = 0;
+                 setInterval(function() {
+                     move -= 1;
+                     $('body').css('background-position', move + 'px');
+                 }, 60)
+             })
+         </script>
+ 
+         <!-- Neon Pink Border -->
+         <div class = "neon pink">
+             <!-- Neon Blue Border -->
+             <div class = "neon blue">
+                 <!-- Content -->
+                 <section class = "signIn">
+                     <!-- Back Arrow -->
+                   <div>
+                        <span class = "material-symbols-outlined arrow_back">
+                            <a href="Home.html">arrow_back</a>
+                        </span>
+                   </div>
+                     <!-- Title -->
+                     <div class = "title">
+                         Sign In
+                     </div>
+                     <!-- User Input -->
+                     <form>
+                        <!-- Name -->
+                        <li>
+                            <li>Name:</li>
+                            <li><input type="text"></input></li>
+                        </li>
+                        <!-- Password -->
+                        <li>
+                            <li>Password:</li>
+                            <li><input type="password"></input></li>
+                        </li>
+                    </form>
+
+                    <!-- Redirect to Sign Up Page -->
+                    <div id = signUp>
+                        <div>Don’t have an account?</div>
+                        <a href="SignUp.html">Sign up here</a>
                     </div>
-                    <section>
-                        <div>
-                            Name:
-                            <div class = "input"> 
-                            </div>
-                        </div>
-                        <div>
-                            Password:
-                            <div class = "input">
-                            </div>
-                        </div>
-                        <div>
-                            Don’t have an account?<br>
-                            <a href="SignUp.html">Sign up here</a>
-                        </div>
-                    </section>
-                    <span class = "material-symbols-outlined arrow_forward"><a href="Games.html">arrow_forward</a></span>
-                </div>
-            </div>
-        </div>
+
+                    <!-- Foward Arrow -->
+                    <div>
+                        <span class = "material-symbols-outlined arrow_forward">
+                            <a href="Games.html">arrow_forward</a>
+                        </span>
+                    </div>
+                 </section>
+             </div>
+         </div>
     </body>
 </html>

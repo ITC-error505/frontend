@@ -1,12 +1,17 @@
 body {
-    background-color: #281A34;
+    /*Background*/
     margin: 0;
+    padding: 0;
+    background: url(assets/pizzaBackground.png);
+    background-size: 100%;
+    height: 100vh;
+    width: 100vw;
+
+    /*All Texts' Font*/
     font-family: "Pixelify Sans", sans-serif;
     font-weight: 400px;
     font-style: normal;
-    font-size:64px;
-    paint-order: stroke fill;
-    color: #281A34;
+    text-align: center;
 }
 
 .material-symbols-outlined {
@@ -15,66 +20,95 @@ body {
   'wght' 500,
   'GRAD' 0,
   'opsz' 40px;
-  -webkit-text-stroke: 0px;
+  font-size: 3rem;
+}
+
+.material-symbols-outlined.door_open {
+    font-size:1.7rem;
+}
+
+.material-symbols-outlined.arrow_back, .exit {
+    width: calc(100vw - 45px * 2);
+    display: flex;
+    justify-content: left;
+    padding-left: 30px;
 }
 
 .material-symbols-outlined.arrow_forward {
-    position: absolute;
-    top: 1000px;
-    left: 450px;
+    width: calc(100vw - 45px * 2);
+    display: flex;
+    justify-content: right;
+    padding-right: 30px;
 }
 
-.material-symbols-outlined.arrow_back {
-    position: absolute;
-    top: 100px;
+body, .neon, .buttons a, input, .scores div{
+    /*Center Content*/
+    display:grid;
+    place-content: center;
+    justify-content: center;
+}
+
+.neon {
+    /*Centering*/
+    grid-row: 1;
+    grid-column: 1;
+
+    border: 5px solid;
+    box-sizing: border-box;
 }
 
 .neon.pink {
-    margin: 30px;
-    border: 5px solid #FF3B7F;
+    border-color: #FF3B7F;
     border-radius: 35px;
-    box-sizing: border-box;
+
+    /*Sizing*/
+    width: calc(100vw - 30px * 2);
+    height: calc(100vh - 30px * 2);
 
 }
 
 .neon.blue {
-    margin: 10px;
-    border: 5px solid #3BF8FF;
+    border-color: #3BF8FF;
     border-radius: 25px;
-    box-sizing: border-box;
-}
 
-.content{
-    height: 85vh;
-    padding-left: 30px;
-    padding-right: 30px;
-    margin-top: 160px;
-    -webkit-text-stroke: 10px #3BF8FF;
+    width: calc(100vw - 45px * 2);
+    height: calc(100vh - 45px * 2);
 }
 
 .title {
+    font-size:3rem;
     text-align: center;
-}
-
-.content section {
-    padding-top: 125px;
-    position: absolute;
-    left: 25%;
-}
-
-a button {
-    font-family: "Pixelify Sans", sans-serif;
-    font-weight: 400px;
-    font-style: normal;
-    margin-bottom: 30px;
-    -webkit-text-stroke: 0px;
-    font-size: 36px;
-    color: #3BF8FF;
-}
-
-a {
-    text-decoration: underline;
+    paint-order: stroke fill;
     color: #281A34;
+    -webkit-text-stroke: 5px #3BF8FF;
+}
+
+.buttons {
+    /*Centering*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+}
+
+.buttons a, input {
+    /*Size*/
+    height: 5rem;
+    width: calc(100vw - 75px * 2);
+    max-width: 240px;
+
+    /*Box*/
+    border-radius: 25px;
+    border: 5px solid #FF3B7F;
+    box-sizing: border-box;
+    background-color: #281A34;
+
+    /*Text*/
+    text-decoration: none;
+    color: #3BF8FF;
+    font-size: 1.8rem;
 }
 
 span a {
@@ -82,27 +116,62 @@ span a {
     color: #3BF8FF;
 }
 
-a span {
+section {
+    height: calc(100vh - 65px * 2);
+    width: calc(100vw - 45px * 2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#signUp a, #signUp div, li{
+    paint-order: stroke fill;
+    color: #281A34;
+    -webkit-text-stroke: 3px #3BF8FF;
+    font-size: 1.2rem;
+}
+
+li {
+    list-style: none;
+    text-align: left;
+    margin: 5px;
+}
+
+.exit a{
+    display: flex;
+    font-size: 1.3rem;
+    color: #3BF8FF;
+    text-decoration: none;
+
+    background-color: #281A34;
+    border: 5px solid #3BF8FF;
+    border-radius: 10px;
+
+    padding: 5px;
+    margin-left: 5px;
+}
+
+.scores {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100vw - 70px * 2);
+    gap: 10px;
+}
+
+.scores div{
+    background-color: #281A34;
+    border: 5px solid #3BF8FF;
+    font-size: 1.5rem;
+    border-radius: 25px;
+    height: 4rem;
+    min-width: 4rem;
+}
+
+.scores div a {
+    width: 150px;
     text-decoration: none;
     color: #3BF8FF;
 }
 
-.input {
-    border: 5px solid #FF3B7F;
-    background-color: #281A34;
-    border-radius: 30px;
-    height: 95px;
-    width: 287px;
-    margin-top: 5px;
-    margin-bottom: 15px;
-}
-
-section div {
-    -webkit-text-stroke: 5px #3BF8FF;
-    font-size:24px;
-    text-align: left;
-}
-
-.Signup {
-    text-align: center;
-}

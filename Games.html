@@ -3,33 +3,79 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--Google material symbols-->
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+        
         <link rel="stylesheet" href="style.css" />
+        <script src="script.js" defer></script>
 
         <!--Pixel Font-->
-        <script src="/script.js" defer></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
 
-        <!--Google material symbols-->
-        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-
         <title>StartPage</title>
     </head>
     <body>
+
+        <!-- Moving Background Script -->
+        <script   src="https://code.jquery.com/jquery-3.7.1.js"></script>
+        <script type = "text/javascript">
+            $(function() {
+                var move = 0;
+                setInterval(function() {
+                    move -= 1;
+                    $('body').css('background-position', move + 'px');
+                }, 60)
+            })
+        </script>
+
+        <!-- Neon Pink Border -->
         <div class = "neon pink">
+            <!-- Neon Blue Border -->
             <div class = "neon blue">
-                <span class = "material-symbols-outlined door_open"><a href="index.html">door_open</a></span>
-                <div class = "content">
+                <!-- Content -->
+                <section class = "Games">
+                    <!-- Exit Button -->
+                    <div class = exit>
+                        <div>
+                            <a href="Home.html">
+                                <span class="material-symbols-outlined door_open">door_open</span>
+                                Exit
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Title -->
                     <div class = "title">
                         Games
                     </div>
-                    <section>
-                            <a href="connect to unity game"><button class = "input">Pizza Warrior</button></a>
-                            <a href="connect to unity game"><button class = "input">Pizza Popper</button></a>
-                            <a href="connect to unity game"><button class = "input">Pizza Man</button></a>
-                    </section>
-                </div>
+                    <!-- Games -->
+                    <div class = "buttons">
+                            <a href="Game1">Pizza Warrior</a>
+                            <a href="Game2">Pizza Popper</a>
+                            <a href="Game3">Pizza Man</a>
+                    </div>
+
+                    <!-- Scores -->
+                    <div class = scores>
+                        <!-- Global Leaderboard -->
+                        <div>
+                            <span class="material-symbols-outlined leaderboard">
+                                <a href="/Leaderboards/Leaderboard.html">social_leaderboard</a>
+                            </span>
+                        </div>
+
+                        <!-- Personal Best -->
+                        <div>
+                            <a href="Leaderboards/PersonalBest.html">Personal<br>Best</a>
+                        </div>
+
+                    </div>
+
+
+                </section>
             </div>
         </div>
     </body>
