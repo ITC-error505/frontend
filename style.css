@@ -274,6 +274,8 @@ table {
     font-size: 1.2rem;
     color: #3BF8FF;
     margin-bottom: 30px;
+    
+    text-align: center;
 }
 
 /* Apply a border to the right of all but the last column */
