@@ -34,14 +34,22 @@ body {
     padding-left: 30px;
 }
 
-.material-symbols-outlined.arrow_forward {
+.back {
     width: calc(100vw - 45px * 2);
     display: flex;
     justify-content: right;
-    padding-right: 30px;
+    padding-right: 50px;
+    padding-bottom: 5px;
 }
 
-body, .neon, .buttons a, input, .scores div, .row .col{
+.material-symbols-outlined.arrow_forward {
+    border: 5px solid #3BF8FF;
+    padding: 5px;
+    border-radius: 20px;
+    background-color: #281A34;
+}
+
+body, .neon, .buttons a, input, .scores div{
     /*Center Content*/
     display:grid;
     place-content: center;
@@ -117,7 +125,7 @@ span a {
 }
 
 .home {
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 section {
@@ -139,7 +147,7 @@ section {
 li {
     list-style: none;
     text-align: left;
-    margin: 5px;
+    margin: 10px;
 }
 
 .exit a{
@@ -191,11 +199,13 @@ li {
     paint-order: stroke fill;
     color: #281A34;
     -webkit-text-stroke: 4px #3BF8FF;
+    text-align: left;
 
     margin-top: -30px;
 }
 
 button {
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -293,4 +303,51 @@ td:not(:last-child, :first-child) {
 
 .active[data-tab-content] {
     display:block;
+}
+
+.ranking {
+    paint-order: stroke fill;
+    color: #281A34;
+    -webkit-text-stroke: 3px #3BF8FF;
+    font-size: 1.5rem;
+    margin: 30px;
+}
+
+.ranking div {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.ranks {
+    display:flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    width: calc(100vw - 45px * 2);
+    padding-bottom: 30px;
+}
+
+.ranks li {
+    margin-top: 2vh;
+    font-size: 1.5rem;
+}
+
+.rankScore {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: space-evenly;
+    padding-left: min(10%, 30px);
+
+    border: 5px solid #FF3B7F;
+    background-color: #281A34;
+    border-radius: 25px;
+    flex-grow: 1;
+    min-height: 5rem;
+    margin-top: 5px;
+    
+    font-size: 1.2rem;
+    -webkit-text-stroke: 0;
+    color:#3BF8FF;
+    text-align: left;
 }
