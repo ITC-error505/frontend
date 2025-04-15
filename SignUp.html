@@ -9,6 +9,7 @@
 
         <link rel="stylesheet" href="style.css" />
         <script src="script.js" defer></script>
+        <script src = "SignUp.html" defer></script>
 
         <!--Pixel Font-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,28 +45,26 @@
                    </div>
                    
 
-                    <!-- Title -->
-                    <div class = "title">
-                        Sign Up
-                    </div>
-                    <!-- User Input -->
-                    <form>
-                       <!-- Name -->
-                       <li>
-                           <li>Name:</li>
-                           <li><input type="text"></input></li>
-                       </li>
-                       <!-- Password -->
-                       <li>
-                           <li>Password:</li>
-                           <li><input type="password"></input></li>
-                       </li>
-                       <!-- Confirm Password -->
-                       <li>
+                <!-- User Input -->
+                <form id="signupForm">
+                    <!-- Name -->
+                    <li>
+                        <li>Name:</li>
+                        <li><input type="text" id="username" required></li>
+                    </li>
+                    <!-- Password -->
+                    <li>
+                        <li>Password:</li>
+                        <li><input type="password" id="password" required></li>
+                    </li>
+                    <!-- Confirm Password -->
+                    <li>
                         <li>Confirm Password:</li>
-                        <li><input type="password"></input></li>
-                        </li>
-                   </form>
+                        <li><input type="password" id="confirmPassword" required></li>
+                    </li>
+                    <!-- Submit Button -->
+                    <button type="submit">Submit</button> <!-- This is the submit button -->
+                </form>
 
                    <!-- Foward Arrow -->
                     <div class = back>
