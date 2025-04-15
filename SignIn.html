@@ -1,81 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <!--Google material symbols-->
-        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <!--Google material symbols-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
 
-        <link rel="stylesheet" href="style.css" />
-        <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <script src="SignIn.js" defer></script>
 
-        <!--Pixel Font-->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <!--Pixel Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
 
-        <title>SignIn</title>
-    </head>
-    <body>
-         <!-- Moving Background Script -->
-         <script   src="https://code.jquery.com/jquery-3.7.1.js"></script>
-         <script type = "text/javascript">
-             $(function() {
-                 var move = 0;
-                 setInterval(function() {
-                     move -= 1;
-                     $('body').css('background-position', move + 'px');
-                 }, 60)
-             })
-         </script>
- 
-         <!-- Neon Pink Border -->
-         <div class = "neon pink">
-             <!-- Neon Blue Border -->
-             <div class = "neon blue">
-                 <!-- Content -->
-                 <section class = "signIn">
-                     <!-- Back Arrow -->
-                   <div>
-                        <span class = "material-symbols-outlined arrow_back">
-                            <a href="index.html">arrow_back</a>
-                        </span>
-                   </div>
-                     <!-- Title -->
-                     <div class = "title">
-                         Sign In
-                     </div>
-                     <!-- User Input -->
-                     <form>
-                        <!-- Name -->
-                        <li>
-                            <li>Name:</li>
-                            <li><input type="text"></input></li>
-                        </li>
-                        <!-- Password -->
-                        <li>
-                            <li>Password:</li>
-                            <li><input type="password"></input></li>
-                        </li>
+    <title>SignIn</title>
+  </head>
+  <body>
+    <!-- Moving Background Script -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script type="text/javascript">
+      $(function () {
+        var move = 0;
+        setInterval(function () {
+          move -= 1;
+          $('body').css('background-position', move + 'px');
+        }, 60);
+      });
+    </script>
 
-                        <!-- Redirect to Sign Up Page -->
-                        <div id = signUp>
-                            <div>Don’t have an account?</div>
-                            <div><a href="SignUp.html">Sign up here</a></div>
-                        </div>
+    <!-- Neon Pink Border -->
+    <div class="neon pink">
+      <!-- Neon Blue Border -->
+      <div class="neon blue">
+        <!-- Content -->
+        <section class="signIn">
+          <!-- Back Arrow -->
+          <div>
+            <span class="material-symbols-outlined arrow_back">
+              <a href="index.html">arrow_back</a>
+            </span>
+          </div>
+          <!-- Title -->
+          <div class="title">Sign In</div>
+          <!-- User Input -->
+          <form id="loginForm">
+            <!-- Name -->
+            <ul>
+              <li>
+                <label for="username">Name:</label>
+                <input type="text" id="username" name="username" />
+              </li>
 
-                        <div class = submit>
-                                <button type="submit" class="btn btn-primary">Sign Up</button>
-                        </div>
-                    </form>
+              <!-- Password -->
+              <li>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" />
+              </li>
+            </ul>
 
-                    <!-- Spacer-->
-                    <div class = space>
-                        <div></div>
-                    </div>
-                 </section>
-             </div>
-         </div>
-    </body>
+            <!-- Redirect to Sign Up Page -->
+            <div id="signUpSection">
+              <div id="signUpPrompt">Don’t have an account?</div>
+              <div id="signUpLink"><a href="SignUp.html">Sign up here</a></div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="submit" id="submitSection">
+              <button type="submit" id="signInButton" class="btn btn-primary">
+                Sign In
+              </button>
+            </div>
+          </form>
+
+          <!-- Spacer-->
+          <div class="space">
+            <div></div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </body>
 </html>
