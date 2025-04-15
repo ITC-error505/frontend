@@ -41,7 +41,7 @@ body {
     padding-right: 30px;
 }
 
-body, .neon, .buttons a, input, .scores div{
+body, .neon, .buttons a, input, .scores div, .row .col{
     /*Center Content*/
     display:grid;
     place-content: center;
@@ -116,12 +116,16 @@ span a {
     color: #3BF8FF;
 }
 
+.home {
+    justify-content: space-around;
+}
+
 section {
     height: calc(100vh - 65px * 2);
     width: calc(100vw - 45px * 2);
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -158,6 +162,7 @@ li {
     align-items: center;
     width: calc(100vw - 70px * 2);
     gap: 10px;
+    margin-bottom: 3rem;
 }
 
 .scores div{
@@ -175,3 +180,117 @@ li {
     color: #3BF8FF;
 }
 
+.subtitle {
+    width: calc(100vw - 45px * 2);
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+
+    font-size: 1.8rem;
+    paint-order: stroke fill;
+    color: #281A34;
+    -webkit-text-stroke: 4px #3BF8FF;
+
+    margin-top: -30px;
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 3rem;
+    height: 3rem;
+
+    background-color: transparent;
+    border: none;
+
+    color: #3BF8FF;
+    -webkit-text-stroke: 0px;
+}
+
+#backButton .material-symbols-outlined.arrow_back {
+    margin-left: -60px;
+}
+
+/*Table Tabs*/
+
+.tabs {
+    width: calc(100vw - 30px * 2);
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+.tabs div {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:60%;
+
+    paint-order: stroke fill;
+    color: #281A34;
+    -webkit-text-stroke: 3px #3BF8FF;
+    font-size: 100%;
+}
+
+.tabs div div {
+    height: 9px;
+    background-color: #3BF8FF;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-top: 5px;
+}
+
+.tab.active {
+    -webkit-text-stroke: 3px #FF3B7F;
+}
+
+.tab.active div{
+    background-color: #FF3B7F;
+}
+
+/*Rounded Table*/
+table {
+    height: calc(100vh - 6rem * 2);
+    width: calc(100vw - 30px * 2);
+    min-height: 670px;
+
+    border-spacing: 0;
+    border-collapse: separate;
+    border-radius: 25px;
+    border:5px solid #FF3B7F;
+    background-color: #281A34;
+    font-size: 1.2rem;
+    color: #3BF8FF;
+    margin-bottom: 30px;
+}
+
+/* Apply a border to the right of all but the last column */
+td:not(:last-child) {
+    border-right: 3px solid #FF3B7F;
+}
+
+/* Apply a border to the bottom of all but the last row */
+tr:not(:last-child)>td {
+    border-bottom: 3px solid #FF3B7F;
+}
+
+tr:first-child>td {
+    min-width: 30px;
+}
+
+td:not(:last-child, :first-child) {
+    width: calc(50vw - 60px);
+}
+
+[data-tab-content] {
+    display:none;
+}
+
+.active[data-tab-content] {
+    display:block;
+}
