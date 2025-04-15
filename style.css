@@ -9,9 +9,7 @@ body {
 
     /*All Texts' Font*/
     font-family: "Pixelify Sans", sans-serif;
-    font-weight: 400px;
     font-style: normal;
-    text-align: center;
 }
 
 .material-symbols-outlined {
@@ -34,19 +32,16 @@ body {
     padding-left: 30px;
 }
 
+.material-symbols-outlined.arrow_forward {
+    color: transparent;
+}
+
 .back {
     width: calc(100vw - 45px * 2);
     display: flex;
     justify-content: right;
     padding-right: 50px;
     padding-bottom: 5px;
-}
-
-.material-symbols-outlined.arrow_forward {
-    border: 5px solid #3BF8FF;
-    padding: 5px;
-    border-radius: 20px;
-    background-color: #281A34;
 }
 
 body, .neon, .buttons a, input, .scores div{
@@ -142,6 +137,8 @@ section {
     color: #281A34;
     -webkit-text-stroke: 3px #3BF8FF;
     font-size: 1.2rem;
+
+    text-align: center;
 }
 
 li {
@@ -204,7 +201,7 @@ li {
     margin-top: -30px;
 }
 
-button {
+.subtitle button {
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -353,8 +350,7 @@ td:not(:last-child, :first-child) {
 }
 
 input {
-    padding-left: min(10%, 30px);
-    padding-right: min(10%, 30px);
+    padding: min(10%, 30px);
 
     font-family: "Pixelify Sans", sans-serif;
     font-style: normal;
@@ -369,4 +365,27 @@ input:focus {
 
 input[type=password] {
     letter-spacing: 0.125rem;
+}
+
+.submit {
+    display:flex;
+    min-height: 3rem;
+}
+
+.submit button {
+    cursor: pointer;
+    border: 5px solid #3BF8FF;
+    border-radius: 20px;
+    background-color: #281A34;
+    padding: 5px;
+    flex-grow: 1;
+    margin-top: 20px;
+
+    color: #3BF8FF;
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 1.2rem;
+}
+
+.space div {
+    height: 3rem;
 }
