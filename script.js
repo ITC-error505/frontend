@@ -1,6 +1,3 @@
-
-
-
 let testArray = [{'rank':'1', 'username':'Bob', 'score':'1234'}, 
                 {'rank':'2', 'username':'John', 'score':'124'}]
 
@@ -11,8 +8,10 @@ let testArray = [{'rank':'1', 'username':'Bob', 'score':'1234'},
                 {'rank':'2', 'username':'Bobby', 'score':'124'}]
 
 let currentData = testArray
+populateBoard()
 
-populateBoard(currentData)
+//let currentData = []
+//updateBoard(1)
 
 /**Switch Tabs and update board */
 const tabs = document.querySelectorAll(".tab")
@@ -26,37 +25,60 @@ tabs.forEach(tab => {
 
         /**Update board to correct game*/
         if (tab.classList.contains("warrior")) {
-            currentData = ArrTwo
-        } else if (tab.classList.contains("popper")) {
-            currentData = Arr3
-        } else {
+            //updateBoard(1)
             currentData = testArray
+        } else if (tab.classList.contains("popper")) {
+            //updateBoard(2)
+            currentData = ArrTwo
+        } else {
+            //updateBoard(3)
+            currentData = Arr3
         }
-
-        populateBoard(currentData)
     })
 })
 
 /**Populate table*/
-function populateBoard(data) {
+function populateBoard() {
     var table = document.getElementById('table')
     table.innerHTML = ""
     
-    for (var i = 0; i < data.length; i++) {
+    for (var i = 0; i < currentData.length; i++) {
         if (i >= 10) {
             break;
         }
 
-        var row = "<tr><td>" + data[i].rank +
+        var row = "<tr><td>" + currentData[i].rank +
                     "</td><td>" +
-                    data[i].username+ 
+                    currentData[i].username+ 
                     "</td><td>" +
-                    data[i].score+
+                    currentData[i].score+
                     "</td></tr>"
 
         table.innerHTML += row;
     }
 }
 
+/**Board Values*/
+/**
+function updateBoard(gameType) {
 
+    const link = ''
+
+    if (gameType === 1) {
+        link = 'https://backend-aqzm.onrender.com/score/leaderboard?gameId=1'
+    } else if (gameType === 2) {
+        link = 'https://backend-aqzm.onrender.com/score/leaderboard?gameId=2'
+    } else {
+        link = 'https://backend-aqzm.onrender.com/score/leaderboard?gameId=3'
+    }
+
+    $.ajax( {
+        method: 'GET',
+        url: link,
+        success:function(response) {
+            currentData = response.data
+            populateBoard(currentData)
+        }
+    })
+}  */
    
