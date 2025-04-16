@@ -143,6 +143,11 @@ section {
     text-align: center;
 }
 
+#signUpSection {
+    padding-top: 10px;
+    margin-bottom: 10px;
+}
+
 li {
     list-style: none;
     text-align: left;
