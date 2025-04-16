@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--Google material symbols-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="EndGameScreen.js" defer></script>
+
+    <!--Pixel Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title></title>
+  </head>
+  <body>
+    <!-- Moving Background Script -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script type="text/javascript">
+      $(function () {
+        var move = 0;
+        setInterval(function () {
+          move -= 1;
+          $('body').css('background-position', move + 'px');
+        }, 60);
+      });
+    </script>
+
+    <section>
+      <!-- Subtitle -->
+      <div class="subtitle">
+        <!-- Back Arrow -->
+        <button id="backButton">
+          <span class="material-symbols-outlined arrow_back">arrow_back</span>
+        </button>
+
+        <!-- Back Button Script -->
+        <script>
+          document
+            .getElementById('backButton')
+            .addEventListener('click', function () {
+              window.history.back();
+            });
+        </script>
+
+        <!-- Text -->
+        Bad Game Id
+      </div>
+
+      <!-- Leaderboard -->
+      <div>
+        <!-- User Rank and Score -->
+        <div id="ranking"></div>
+
+        <!-- Pizza Warrior -->
+        <div>
+          <table>
+            <tbody id="table">
+              <td>Loading...</td>
+              <td>Loading...</td>
+              <td>Loading...</td>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
