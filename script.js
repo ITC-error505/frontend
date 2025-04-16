@@ -1,4 +1,4 @@
-let testArray = [{'rank':'1', 'username':'Bob', 'score':'1234'}, 
+/**let testArray = [{'rank':'1', 'username':'Bob', 'score':'1234'}, 
                 {'rank':'2', 'username':'John', 'score':'124'}]
 
                 let ArrTwo = [{'rank':'1', 'username':'John', 'score':'1234'}, 
@@ -7,11 +7,12 @@ let testArray = [{'rank':'1', 'username':'Bob', 'score':'1234'},
                 let Arr3 = [{'rank':'2', 'username':'John', 'score':'1234'}, 
                 {'rank':'2', 'username':'Bobby', 'score':'124'}]
 
-let currentData = testArray
-populateBoard()
+//let currentData = testArray
 
-//let currentData = []
-//updateBoard(1)
+/**Load starting data */
+let currentData = []
+var currentGame = 1;
+updateBoard(currentGame)
 
 /**Switch Tabs and update board */
 const tabs = document.querySelectorAll(".tab")
@@ -25,17 +26,59 @@ tabs.forEach(tab => {
 
         /**Update board to correct game*/
         if (tab.classList.contains("warrior")) {
-            //updateBoard(1)
-            currentData = testArray
+            currentGame = 1
+            //currentData = testArray
         } else if (tab.classList.contains("popper")) {
-            //updateBoard(2)
-            currentData = ArrTwo
+            currentGame = 2
+            //currentData = ArrTwo
         } else {
-            //updateBoard(3)
-            currentData = Arr3
+            currentGame = 3
+            //currentData = Arr3
         }
+        updateBoard(currentGame)
     })
 })
+
+/**Update Board Values*/
+
+function updateBoard(gameType) {
+    if (gameType == 1) {
+        //currentData = testArray
+
+        $.ajax( {
+            method: 'GET',
+            url: 'https://backend-aqzm.onrender.com/score/leaderboard?gameId=1',
+            success:function(response) {
+                currentData = response.data
+                populateBoard(currentData)
+            }
+        })
+    } else if (gameType == 2) {
+        //currentData = ArrTwo
+
+        $.ajax( {
+            method: 'GET',
+            url: 'https://backend-aqzm.onrender.com/score/leaderboard?gameId=2',
+            success:function(response) {
+                currentData = response.data
+                populateBoard(currentData)
+            }
+        })
+    } else {
+        //currentData = Arr3
+        $.ajax( {
+            method: 'GET',
+            url: 'https://backend-aqzm.onrender.com/score/leaderboard?gameId=3',
+            success:function(response) {
+                currentData = response.data
+                populateBoard(currentData)
+            }
+        })
+    }
+
+    populateBoard()
+}
+
 
 /**Populate table*/
 function populateBoard() {
@@ -57,28 +100,4 @@ function populateBoard() {
         table.innerHTML += row;
     }
 }
-
-/**Board Values*/
-/**
-function updateBoard(gameType) {
-
-    const link = ''
-
-    if (gameType === 1) {
-        link = 'https://backend-aqzm.onrender.com/score/leaderboard?gameId=1'
-    } else if (gameType === 2) {
-        link = 'https://backend-aqzm.onrender.com/score/leaderboard?gameId=2'
-    } else {
-        link = 'https://backend-aqzm.onrender.com/score/leaderboard?gameId=3'
-    }
-
-    $.ajax( {
-        method: 'GET',
-        url: link,
-        success:function(response) {
-            currentData = response.data
-            populateBoard(currentData)
-        }
-    })
-}  */
    
