@@ -49,7 +49,7 @@ async function updateBoard(gameType) {
   } else if (gameType == 2) {
     //currentData = ArrTwo
 
-    response = await fetchLeaderBoard();
+    response = await fetchLeaderBoard(3);
   } else {
     //currentData = Arr3
     response = await fetchLeaderBoard(1);
