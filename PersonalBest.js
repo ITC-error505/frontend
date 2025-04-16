@@ -1,3 +1,6 @@
+var warriorID = 2;
+var popperID = 3;
+var manID = 1;
 
 /**Loading screens */
 loading('warrior');
@@ -14,9 +17,9 @@ function loading(id) {
 var userID = 1;
 
 /**get user ranks and high scores */
-updateScores(2, 'warrior');
-updateScores(3, 'popper');
-updateScores(1, 'man');
+updateScores(warriorID, 'warrior');
+updateScores(popperID, 'popper');
+updateScores(manID, 'man');
 
 async function updateScores(gameId, id) {
     var game = document.getElementById(id);
