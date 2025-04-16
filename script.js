@@ -35,6 +35,7 @@ tabs.forEach((tab) => {
       currentGame = 3;
       //currentData = Arr3
     }
+    loading();
     await updateBoard(currentGame);
   });
 });
@@ -71,13 +72,11 @@ async function fetchLeaderBoard(gameId) {
 /**Populate table*/
 function populateBoard() {
   var table = document.getElementById('table');
-  table.innerHTML = '';
-
+    table.innerHTML = '';
   for (var i = 0; i < currentData.length; i++) {
     if (i >= 10) {
       break;
     }
-
     var row =
       '<tr><td>' +
       currentData[i].rank +
@@ -85,8 +84,20 @@ function populateBoard() {
       currentData[i].username +
       '</td><td>' +
       currentData[i].score +
-      '</td></tr>';
+      ' pts</td></tr>';
 
     table.innerHTML += row;
   }
+}
+
+function loading() {
+  var table = document.getElementById('table');
+  table.innerHTML = 
+    '<tr><td>' +
+    'Loading...' +
+    '</td><td>' +
+    'Loading...' +
+    '</td><td>' +
+    'Loading...' +
+    '</td></tr>';
 }

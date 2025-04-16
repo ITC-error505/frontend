@@ -296,7 +296,7 @@ td:not(:last-child, :first-child) {
     width: calc(50vw - 60px);
 }
 
-.ranking {
+#ranking {
     paint-order: stroke fill;
     color: #281A34;
     -webkit-text-stroke: 3px #3BF8FF;
@@ -304,7 +304,7 @@ td:not(:last-child, :first-child) {
     margin: 30px;
 }
 
-.ranking div {
+#ranking div {
     display: flex;
     justify-content: space-evenly;
 }
