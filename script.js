@@ -12,6 +12,12 @@
 /**Load starting data */
 let currentData = [];
 var currentGame = 1;
+
+/**Game IDs */
+const warriorID = 2;
+const popperID = 3;
+const manID = 1;
+
 updateBoard(currentGame);
 
 /**Switch Tabs and update board */
@@ -46,14 +52,14 @@ async function updateBoard(gameType) {
   var response;
   if (gameType == 1) {
     //currentData = testArray
-    response = await fetchLeaderBoard(2);
+    response = await fetchLeaderBoard(warriorID);
   } else if (gameType == 2) {
     //currentData = ArrTwo
 
-    response = await fetchLeaderBoard(3);
+    response = await fetchLeaderBoard(popperID);
   } else {
     //currentData = Arr3
-    response = await fetchLeaderBoard(1);
+    response = await fetchLeaderBoard(manID);
   }
   currentData = await response.json();
   populateBoard();

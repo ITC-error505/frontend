@@ -1,6 +1,6 @@
-var warriorID = 2;
-var popperID = 3;
-var manID = 1;
+const warriorID = 2;
+const popperID = 3;
+const manID = 1;
 
 /**Loading screens */
 loading('warrior');
