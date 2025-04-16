@@ -10,6 +10,8 @@ body {
     /*All Texts' Font*/
     font-family: "Pixelify Sans", sans-serif;
     font-style: normal;
+    font-weight: 400px;
+    text-align: center;
 }
 
 .material-symbols-outlined {
@@ -274,8 +276,6 @@ table {
     font-size: 1.2rem;
     color: #3BF8FF;
     margin-bottom: 30px;
-    
-    text-align: center;
 }
 
 /* Apply a border to the right of all but the last column */
@@ -294,14 +294,6 @@ tr:first-child>td {
 
 td:not(:last-child, :first-child) {
     width: calc(50vw - 60px);
-}
-
-[data-tab-content] {
-    display:none;
-}
-
-.active[data-tab-content] {
-    display:block;
 }
 
 .ranking {
