@@ -1,86 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <!--Google material symbols-->
-        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-        
-        <link rel="stylesheet" href="style.css" />
-        <script src="script.js" defer></script>
+    <!--Google material symbols-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
 
-        <!--Pixel Font-->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!--Pixel Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
 
-        <title>GlobalBoard</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
-    </head>
-    <body>
+    <title>GlobalBoard</title>
+  </head>
+  <body>
+    <!-- Moving Background Script -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script type="text/javascript">
+      $(function () {
+        var move = 0;
+        setInterval(function () {
+          move -= 1;
+          $('body').css('background-position', move + 'px');
+        }, 60);
+      });
+    </script>
 
-        <!-- Moving Background Script -->
-        <script   src="https://code.jquery.com/jquery-3.7.1.js"></script>
-        <script type = "text/javascript">
-            $(function() {
-                var move = 0;
-                setInterval(function() {
-                    move -= 1;
-                    $('body').css('background-position', move + 'px');
-                }, 60)
-            })
+    <section class="GlobalBoard">
+      <!-- Subtitle -->
+      <div class="subtitle">
+        <!-- Back Arrow -->
+        <button id="backButton">
+          <span class="material-symbols-outlined arrow_back">arrow_back</span>
+        </button>
+
+        <!-- Back Button Script -->
+        <script>
+          document
+            .getElementById('backButton')
+            .addEventListener('click', function () {
+              window.history.back();
+            });
         </script>
 
-        <section class = GlobalBoard>
-            <!-- Subtitle -->
-            <div class = "subtitle">
-                <!-- Back Arrow -->
-                <button id = backButton>
-                    <span class = "material-symbols-outlined arrow_back">arrow_back</span>
-                </button>
+        <!-- Text -->
+        Leaderboard
+      </div>
 
-                <!-- Back Button Script -->
-                <script>
-                    document.getElementById("backButton").addEventListener("click", function() {
-                    window.history.back();
-                    });
-                </script>
+      <!-- Leaderboards -->
+      <div>
+        <!-- Tabs -->
+        <div class="tabs">
+          <div class="active tab warrior">
+            Pizza<br />Warrior
+            <div></div>
+          </div>
 
-                <!-- Text -->
-                Leaderboard
-                
-            </div>
+          <div class="tab popper">
+            Pizza<br />Popper
+            <div></div>
+          </div>
+          <div class="tab man">
+            Pizza<br />Man
+            <div></div>
+          </div>
+        </div>
 
-            <!-- Leaderboards -->
-            <div>
-                <!-- Tabs -->
-                <div class = tabs>
-                    <div class = "active tab warrior">Pizza<br>Warrior
-                        <div></div>
-                    </div>
-
-                    <div class = "tab popper">Pizza<br>Popper
-                        <div></div>
-                    </div>
-                    <div class = "tab man">Pizza<br>Man
-                        <div></div>
-                    </div>
-                </div>
-
-                <!-- Table -->
-                <div>
-                    <table>
-                        <tbody id = table>
-
-                        </tbody>
-                    </table>
-                </div>
-
-            </div>
-
-        </section>
-    </body>
+        <!-- Table -->
+        <div>
+          <table>
+            <tbody id="table"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>
