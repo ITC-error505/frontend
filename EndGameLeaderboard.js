@@ -4,7 +4,7 @@ var gameId = localStorage.getItem('gameId');
 
 document.addEventListener('DOMContentLoaded', () => {
   const gameId = parseInt(localStorage.getItem('gameId'));
-  const titleElement = document.querySelector('.subtitle.text');
+  const titleElement = document.querySelector('.subtitle div');
   switch (gameId) {
     case 1:
       titleElement.textContent = 'Pizza Man';
