@@ -134,7 +134,7 @@ section {
     align-items: center;
 }
 
-#signUp a, #signUp div, li{
+#signUpSection a, #signUpSection div, li{
     paint-order: stroke fill;
     color: #281A34;
     -webkit-text-stroke: 3px #3BF8FF;
@@ -382,4 +382,9 @@ input[type=password] {
 
 .space div {
     height: 3rem;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
 }
