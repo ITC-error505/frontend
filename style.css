@@ -289,11 +289,11 @@ tr:not(:last-child)>td {
 }
 
 tr:first-child>td {
-    min-width: 30px;
+    min-width: 10vw;
 }
 
-td:not(:last-child, :first-child) {
-    width: calc(50vw - 60px);
+td:not(:last-child, :first-child), td:last-child {
+    min-width: calc(30vw);
 }
 
 #ranking {
