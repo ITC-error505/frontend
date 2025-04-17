@@ -18,6 +18,13 @@ const warriorID = 2;
 const popperID = 3;
 const manID = 1;
 
+
+
+const eventSource = new EventSource('https://backend-aqzm.onrender.com/score/sse');
+eventSource.onmessage = async function (event) {
+  await updateBoard();
+};
+
 updateBoard(currentGame);
 
 /**Switch Tabs and update board */

@@ -24,11 +24,11 @@ var ranking = document.getElementById('ranking');
 ranking.innerHTML =
   '<div><div>Rank: Loading...</div><div>Loading pts...</div></div>';
 
-async function InitializePizzaEndingScreen() {
+async function UpdateLiveChanges() {
   await Promise.all([setRanking(), updateBoard()]);
 }
 
-InitializePizzaEndingScreen();
+UpdateLiveChanges();
 
 async function setRanking() {
   var response;
@@ -100,17 +100,16 @@ function populateBoard() {
 }
 
 function convertNum(num) {
-
-  if (window.matchMedia("(orientation: portrait)").matches) {
+  if (window.matchMedia('(orientation: portrait)').matches) {
     // you're in PORTRAIT mode
-    if(num > 999) {
+    if (num > 999) {
       return convertToAbbreviation(num);
     } else {
       return num;
     }
   }
-  
-  if (window.matchMedia("(orientation: landscape)").matches) {
+
+  if (window.matchMedia('(orientation: landscape)').matches) {
     // you're in LANDSCAPE mode
     return num.toLocaleString();
   }
@@ -121,12 +120,19 @@ function convertNum(num) {
 function convertToAbbreviation(number) {
   // Create a new Intl.NumberFormat object with options
   const formatter = new Intl.NumberFormat('en', {
-      notation: 'compact',
-      compactDisplay: 'short',
-      minimumSignificantDigits: 3,
-      maxinumSignificantDigits: 3
+    notation: 'compact',
+    compactDisplay: 'short',
+    minimumSignificantDigits: 3,
+    maxinumSignificantDigits: 3,
   });
-  
+
   // Format the number and return the result
   return formatter.format(number);
 }
+
+const eventSource = new EventSource(
+  'https://backend-aqzm.onrender.com/score/sse'
+);
+eventSource.onmessage = async function (event) {
+  await UpdateLiveChanges();
+};
