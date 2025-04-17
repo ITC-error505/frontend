@@ -92,9 +92,41 @@ function populateBoard() {
       '</td><td>' +
       currentData[i].username +
       '</td><td>' +
-      currentData[i].score +
+      convertNum(currentData[i].score) +
       '</td></tr>';
 
     table.innerHTML += row;
   }
+}
+
+function convertNum(num) {
+
+  if (window.matchMedia("(orientation: portrait)").matches) {
+    // you're in PORTRAIT mode
+    if(num > 999) {
+      return convertToAbbreviation(num);
+    } else {
+      return num;
+    }
+  }
+  
+  if (window.matchMedia("(orientation: landscape)").matches) {
+    // you're in LANDSCAPE mode
+    return num.toLocaleString();
+  }
+
+  return num.toLocaleString();
+}
+
+function convertToAbbreviation(number) {
+  // Create a new Intl.NumberFormat object with options
+  const formatter = new Intl.NumberFormat('en', {
+      notation: 'compact',
+      compactDisplay: 'short',
+      minimumSignificantDigits: 3,
+      maxinumSignificantDigits: 3
+  });
+  
+  // Format the number and return the result
+  return formatter.format(number);
 }
