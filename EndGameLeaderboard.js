@@ -1,5 +1,5 @@
 /**User's own rank and score */
-var userId = localStorage.getItem('userId');
+var token = localStorage.getItem('userIdTokenized');
 var gameId = localStorage.getItem('gameId');
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -48,9 +48,13 @@ async function setRanking() {
 
 async function getRanking() {
   const response = await fetch(
-    `https://backend-aqzm.onrender.com/score/highScore?accountId=${userId}&gameId=${gameId}`,
+    `https://backend-aqzm.onrender.com/score/highScore?gameId=${gameId}`,
     {
       method: 'GET',
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
     }
   );
   return response;

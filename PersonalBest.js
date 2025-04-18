@@ -13,8 +13,7 @@ function loading(id) {
 
 }
 
-
-var userID = 1;
+var token = localStorage.getItem('userIdTokenized');
 
 /**get user ranks and high scores */
 updateScores(warriorID, 'warrior');
@@ -34,12 +33,17 @@ async function updateScores(gameId, id) {
                     ' pts </div>'
 }
 
+
 async function getRanking(gameId) {
-    const response = await fetch(
-      `https://backend-aqzm.onrender.com/score/highScore?accountId=${userID}&gameId=${gameId}`,
-      {
-        method: 'GET',
-      }
-    );
-    return response;
-  }
+  const response = await fetch(
+    `https://backend-aqzm.onrender.com/score/highScore?gameId=${gameId}`,
+    {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+    }
+  );
+  return response;
+}

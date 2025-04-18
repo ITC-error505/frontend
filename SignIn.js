@@ -10,8 +10,8 @@ document
     const response = await logInAccount(username, password);
 
     if (response.ok) {
-      const userId = await response.json();
-      localStorage.setItem('userId', userId);
+      const userIdTokenized = await response.json();
+      localStorage.setItem('userIdTokenized', userIdTokenized);
 
       window.location.href = './Games.html';
     } else {
