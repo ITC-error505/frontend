@@ -19,7 +19,7 @@ document
       const logInResponse = await logInAccount(username, password);
       if (logInResponse.ok) {
         const userId = await logInResponse.json();
-        localStorage.setItem('userId', userId);
+        localStorage.setItem('userIdTokenized', userId);
         window.location.href = './Games.html';
       } else {
         alert('Something went wrong with logging in');
