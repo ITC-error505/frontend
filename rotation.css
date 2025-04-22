@@ -1,0 +1,29 @@
+.rotation {
+    display: none;
+}
+
+/**If the device is a touch screen and in landscape*/
+@media only screen and (orientation: landscape) and (any-pointer: coarse){
+    .neon.pink {
+        display: none;
+    }
+
+    .rotation {
+       display:block;
+    }
+
+    body {
+        color: #3BF8FF;
+        font-size: 1.8rem;
+    }
+
+    body div {
+        text-wrap: wrap;
+        width: 70%;
+        justify-self: center;
+        border: 5px solid #FF3B7F;
+        border-radius: 30px;
+        background-color: #281A34;
+        padding: 20px;
+    }
+}
