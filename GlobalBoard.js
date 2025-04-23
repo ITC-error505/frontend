@@ -27,6 +27,10 @@ eventSource.onmessage = async function (event) {
 
 updateBoard(currentGame);
 
+screen.orientation.addEventListener("change", async () => {
+  await updateBoard(currentGame);
+})
+
 /**Switch Tabs and update board */
 const tabs = document.querySelectorAll('.tab');
 tabs.forEach((tab) => {

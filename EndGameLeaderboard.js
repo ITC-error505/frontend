@@ -30,6 +30,10 @@ async function UpdateLiveChanges() {
 
 UpdateLiveChanges();
 
+screen.orientation.addEventListener("change", async () => {
+  await updateBoard(currentGame);
+})
+
 async function setRanking() {
   var response;
   let userData;
