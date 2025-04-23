@@ -9,15 +9,7 @@
     }
 
     .rotation {
-       display:block;
-    }
-
-    body {
-        color: #3BF8FF;
-        font-size: 1.8rem;
-    }
-
-    body div {
+        display:block;
         text-wrap: wrap;
         width: 70%;
         justify-self: center;
@@ -26,4 +18,10 @@
         background-color: #281A34;
         padding: 20px;
     }
+
+    body {
+        color: #3BF8FF;
+        font-size: 1.8rem;
+    }
+
 }
