@@ -15,7 +15,7 @@ document
 
       window.location.href = './Games.html';
     } else {
-      alert('Something went wrong with logging in');
+      alert(await response.json());
     }
   });
 

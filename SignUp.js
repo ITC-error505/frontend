@@ -14,7 +14,6 @@ document
     }
     const response = await registerAccount(username, password);
 
-    //This part is strange.
     if (response.ok) {
       const logInResponse = await logInAccount(username, password);
       if (logInResponse.ok) {
@@ -22,11 +21,11 @@ document
         localStorage.setItem('userIdTokenized', userId);
         window.location.href = './Games.html';
       } else {
-        alert('Something went wrong with logging in');
+        alert(await logInResponse.json());
         window.location.href = './SignIn.html';
       }
     } else {
-      alert('Something went wrong with registration');
+      alert(await response.json());
     }
   });
 
