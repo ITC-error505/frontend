@@ -18,18 +18,24 @@ const warriorID = 2;
 const popperID = 3;
 const manID = 1;
 
+// const eventSource = new EventSource('https://backend-aqzm.onrender.com/score/sse');
+// eventSource.onmessage = async function (event) {
+//   await updateBoard();
+// };
 
-
-const eventSource = new EventSource('https://backend-aqzm.onrender.com/score/sse');
+// Development
+const eventSource = new EventSource(
+  'https://backend-aqzm.onrender.com/score/sse'
+);
 eventSource.onmessage = async function (event) {
-  await updateBoard();
+  await updateBoard(currentGame);
 };
 
 updateBoard(currentGame);
 
-screen.orientation.addEventListener("change", async () => {
+screen.orientation.addEventListener('change', async () => {
   await updateBoard(currentGame);
-})
+});
 
 /**Switch Tabs and update board */
 const tabs = document.querySelectorAll('.tab');
@@ -89,7 +95,7 @@ async function fetchLeaderBoard(gameId) {
 /**Populate table*/
 function populateBoard() {
   var table = document.getElementById('table');
-    table.innerHTML = '';
+  table.innerHTML = '';
   for (var i = 0; i < currentData.length; i++) {
     if (i >= 10) {
       break;
@@ -110,7 +116,7 @@ function populateBoard() {
 
 function loading() {
   var table = document.getElementById('table');
-  table.innerHTML = 
+  table.innerHTML =
     '<tr><td>' +
     'Loading...' +
     '</td><td>' +
@@ -121,17 +127,16 @@ function loading() {
 }
 
 function convertNum(num) {
-
-  if (window.matchMedia("(orientation: portrait)").matches) {
+  if (window.matchMedia('(orientation: portrait)').matches) {
     // you're in PORTRAIT mode
-    if(num > 999) {
+    if (num > 999) {
       return convertToAbbreviation(num);
     } else {
       return num;
     }
   }
-  
-  if (window.matchMedia("(orientation: landscape)").matches) {
+
+  if (window.matchMedia('(orientation: landscape)').matches) {
     // you're in LANDSCAPE mode
     return num.toLocaleString();
   }
@@ -142,12 +147,12 @@ function convertNum(num) {
 function convertToAbbreviation(number) {
   // Create a new Intl.NumberFormat object with options
   const formatter = new Intl.NumberFormat('en', {
-      notation: 'compact',
-      compactDisplay: 'short',
-      minimumSignificantDigits: 3,
-      maxinumSignificantDigits: 3
+    notation: 'compact',
+    compactDisplay: 'short',
+    minimumSignificantDigits: 3,
+    maxinumSignificantDigits: 3,
   });
-  
+
   // Format the number and return the result
   return formatter.format(number);
 }
