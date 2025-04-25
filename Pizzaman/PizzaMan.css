@@ -1,0 +1,65 @@
+body {
+    text-align: center; 
+    padding: 0; 
+    border: 0; 
+    margin: 0; 
+    background: url(../assets/pizzaBackground.png);
+    background-size: 100%;
+    background-color: #281A34; 
+    display: grid;
+    align-items: center;
+    justify-content:center;
+
+    /*All Texts' Font*/
+    font-family: "Pixelify Sans", sans-serif;
+    font-style: normal;
+    font-weight: 400px;
+    text-align: center;
+
+}
+
+.rotation {
+    display: none;
+}
+
+#unity-footer {
+    display: none;
+}
+
+/**If the device is a touch screen and in landscape*/
+@media only screen and (orientation: landscape){
+    #unity-container, .title {
+        display: none;
+    }
+
+    .rotation {
+        display:block;
+        text-wrap: wrap;
+        width: 70%;
+        justify-self: center;
+        border: 5px solid #FF3B7F;
+        border-radius: 30px;
+        background-color: #281A34;
+        padding: 20px;
+    }
+
+    body {
+        color: #3BF8FF;
+        font-size: 1.8rem;
+        height: 100vh;
+        width: 100vw;
+    }
+
+}
+
+#unity-canvas {
+    width: calc(100vw - 75px*2); 
+    height: calc(2*(100vw - 75px*2));
+    background: #281A34; 
+    border: 5px solid #FF3B7F; 
+    border-radius: 20px; 
+    justify-self: center;
+}
+
+
+
