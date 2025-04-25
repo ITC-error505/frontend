@@ -10,9 +10,13 @@ if (token) {
 
 async function validateTokenExpiration(token) {
   const response = await fetch(
-    `https://backend-aqzm.onrender.com/account/validateTokenExpiration?token=${token}`,
+    `https://backend-aqzm.onrender.com/account/validateToken`,
     {
       method: 'POST',
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
     }
   );
   return response;
