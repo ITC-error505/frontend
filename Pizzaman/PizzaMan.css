@@ -16,9 +16,6 @@ body {
     font-weight: 400px;
     text-align: center;
 
-    width: 100vw;
-    height: 100vh;
-
 }
 
 .rotation {
@@ -58,6 +55,7 @@ body {
 #unity-canvas {
     width: calc(100vw - 120px*2); 
     height: calc(2*(100vw - 120px*2));
+    margin-top: 30px;
     background: #281A34; 
     border: 5px solid #FF3B7F; 
     border-radius: 20px; 
