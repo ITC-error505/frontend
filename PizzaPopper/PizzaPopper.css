@@ -3,12 +3,73 @@ body {
     padding: 0; 
     border: 0; 
     margin: 0; 
+    background: url(../assets/pizzaBackground.png);
+    background-size: 100%;
     background-color: #281A34; 
     display: grid;
     align-items: center;
     justify-content:center;
 
-    /*background: url(BuildFolder/pizzaBackground.png);*/
+    /*All Texts' Font*/
+    font-family: "Pixelify Sans", sans-serif;
+    font-style: normal;
+    font-weight: 400px;
+    text-align: center;
+
+}
+
+.title {
+    color: #3BF8FF;
+    font-size: 1.8em;
+    margin: 30px;
+    margin-bottom: 20px;
+    color: #3BF8FF;
+
+    background-color: #281A34;
+    border: 5px solid #FF3B7F;
+    padding-top: 5px;
+    padding-bottom: 13px;
+    border-radius: 15px;
+    width: calc(100vw - 25px*2);
+    justify-self: center;
+}
+
+.rotation.device {
+    display: none;
+}
+
+@media only screen and (orientation: landscape) and (any-pointer: coarse) {
+    #unity-canvas, .title, .msg {
+        display: none;
+    }
+
+    body { 
+        height: 100vh;
+        width: 100vw;
+    }
+}
+
+@media screen and (any-pointer: fine) {
+    #unity-canvas, .title, .msg {
+        display: none;
+    }
+    body { 
+        height: 100vh;
+        width: 100vw;
+        color: #3BF8FF;
+        font-size: 1.8rem;
+    }
+
+    .rotation.device {
+        display:block;
+        text-wrap: wrap;
+        width: 70%;
+        justify-self: center;
+        border: 5px solid #FF3B7F;
+        border-radius: 30px;
+        background-color: #281A34;
+        padding: 20px;
+    }
 }
 
 #unity-canvas {
@@ -17,6 +78,24 @@ body {
     background: #281A34; 
     border: 5px solid #FF3B7F; 
     border-radius: 20px; 
-    margin-top: 60px;
+    justify-self: center;
 }
+
+.msg {
+    paint-order: stroke fill;
+    color: #3BF8FF;
+
+    text-wrap: wrap;
+    width: 60%;
+    justify-self: center;
+    border: 5px solid #FF3B7F;
+    border-radius: 30px;
+    background-color: #281A34;
+    padding: 20px;
+    font-size: 1.8em;
+
+    margin-top: 2rem;
+}
+
+
 
