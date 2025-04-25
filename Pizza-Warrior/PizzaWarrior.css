@@ -24,7 +24,7 @@ body {
 
 /**If the device is a touch screen and in landscape*/
 @media only screen and (orientation: portrait){
-    #unity-canvas {
+    #unity-container {
         display: none;
     }
 

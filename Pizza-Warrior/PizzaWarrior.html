@@ -81,7 +81,7 @@
         companyName: "DefaultCompany",
         productName: "Pizza Warrior",
         productVersion: "0.1",
-        showBanner: unityShowBanner,
+        //showBanner: unityShowBanner,
       };
 
       // By default, Unity keeps WebGL canvas render target size matched with
@@ -121,13 +121,13 @@
         canvas.style.height = "100vh";
       }
 
-      document.querySelector("#unity-loading-bar").style.display = "block";
+      //document.querySelector("#unity-loading-bar").style.display = "block";
 
       var script = document.createElement("script");
       script.src = loaderUrl;
       script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
-          document.querySelector("#unity-progress-bar-full").style.width = 100 * progress + "%";
+          //document.querySelector("#unity-progress-bar-full").style.width = 100 * progress + "%";
                 }).then((unityInstance) => {
                   document.querySelector("#unity-loading-bar").style.display = "none";
                   // document.querySelector("#unity-fullscreen-button").onclick = () => {
