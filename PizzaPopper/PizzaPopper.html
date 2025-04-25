@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="PizzaPopper.css" />
+    <link rel="stylesheet" href="../rotation.css" />
+    <script src="Authorization.js"></script>
+
+          <!--Google material symbols-->
+          <link
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+          rel="stylesheet"
+      />
+
+      <!--Pixel Font-->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="../assets/favicon.ico">
+    <title>Chuck N' Cheese</title>
+  </head>
+  <body>
+    <div class = rotation>Please Rotate Or Resize The Screen Into Portrait Mode. <br>
+      <span class="material-symbols-outlined" style= "font-size: 3rem;">
+      sync
+      </span>
+    </div>
+
+    <div class = "rotation device">Game avaliable only on touchscreen devices.<br>
+    </div>
+
+    <div class = title >Pizza Popper</div>
+
+    <canvas id="unity-canvas"></canvas>
+
+    <div class = msg>Tap the pizzas to score points! Don't let them out of your sights, soldier.</div>
+
+    <script src="Build/BuildFolder.loader.js"></script>
+    <script>
+      /**if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        // Mobile device style: fill the whole browser client area with the game canvas:
+        var meta = document.createElement('meta');
+        meta.name = 'viewport';
+        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+        document.getElementsByTagName('head')[0].appendChild(meta);
+
+        var canvas = document.querySelector("#unity-canvas");
+        canvas.style.width = "100%";
+        canvas.style.height = "100%";
+        canvas.style.position = "fixed";
+
+        document.body.style.textAlign = "left";
+      }*/
+
+      createUnityInstance(document.querySelector("#unity-canvas"), {
+        arguments: [],
+        dataUrl: "Build/BuildFolder.data",
+        frameworkUrl: "Build/BuildFolder.framework.js",
+        codeUrl: "Build/BuildFolder.wasm",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "DefaultCompany",
+        productName: "My project",
+        productVersion: "1.0",
+        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+      });
+    </script>
+  </body>
+</html>
