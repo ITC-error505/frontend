@@ -20,7 +20,7 @@ body {
 
 .title {
     color: #3BF8FF;
-    font-size: 2.5em;
+    font-size: 2.5rem;
     margin: 30px;
     margin-bottom: 20px;
     color: #3BF8FF;
@@ -28,7 +28,7 @@ body {
     background-color: #281A34;
     border: 5px solid #FF3B7F;
     padding-top: 5px;
-    padding-bottom: 13px;
+    padding-bottom: 12px;
     border-radius: 15px;
     width: calc(100vw - 25px*2);
     justify-self: center;
@@ -82,19 +82,19 @@ body {
 }
 
 .msg {
-    paint-order: stroke fill;
     color: #3BF8FF;
 
     text-wrap: wrap;
-    width: 60%;
+    width: 70%;
     justify-self: center;
     border: 5px solid #FF3B7F;
     border-radius: 30px;
     background-color: #281A34;
-    padding: 20px;
-    font-size: 2em;
+    padding: 15px;
+    font-size: 1.2rem;
 
     margin-top: 2rem;
+    margin-bottom: 30px;
 }
 
 
