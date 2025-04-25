@@ -53,8 +53,8 @@ body {
 }
 
 #unity-canvas {
-    width: calc(100vw - 75px*2); 
-    height: calc(2*(100vw - 75px*2));
+    width: calc(100vw - 100px*2); 
+    height: calc(2*(100vw - 100px*2));
     background: #281A34; 
     border: 5px solid #FF3B7F; 
     border-radius: 20px; 
