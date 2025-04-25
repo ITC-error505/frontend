@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Chuck N' Cheese</title>
-    <link rel="shortcut icon" href="../assets/favicon.ico">
+    <title>Unity Web Player | Pizza Warrior</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="Authorization.js"></script>
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
@@ -18,9 +19,6 @@
       </div>
       <div id="unity-warning"> </div>
       <div id="unity-footer">
-        <div id="unity-logo-title-footer"></div>
-        <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">Pizza Warrior</div>
       </div>
     </div>
     <script>
@@ -109,16 +107,16 @@
       script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
           document.querySelector("#unity-progress-bar-full").style.width = 100 * progress + "%";
-              }).then((unityInstance) => {
-                document.querySelector("#unity-loading-bar").style.display = "none";
-                document.querySelector("#unity-fullscreen-button").onclick = () => {
-                  unityInstance.SetFullscreen(1);
-                };
+                }).then((unityInstance) => {
+                  document.querySelector("#unity-loading-bar").style.display = "none";
+                  // document.querySelector("#unity-fullscreen-button").onclick = () => {
+                  //   unityInstance.SetFullscreen(1);
+                  // };
 
-              }).catch((message) => {
-                alert(message);
-              });
-            };
+                }).catch((message) => {
+                  alert(message);
+                });
+              };
 
       document.body.appendChild(script);
 
