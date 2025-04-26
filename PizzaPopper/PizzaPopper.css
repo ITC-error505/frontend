@@ -34,10 +34,6 @@ body {
     justify-self: center;
 }
 
-.rotation.device {
-    display: none;
-}
-
 @media only screen and (orientation: landscape) and (any-pointer: coarse) {
     #unity-canvas, .title, .msg {
         display: none;
@@ -49,28 +45,6 @@ body {
     }
 }
 
-@media screen and (any-pointer: fine) {
-    #unity-canvas, .title, .msg {
-        display: none;
-    }
-    body { 
-        height: 100vh;
-        width: 100vw;
-        color: #3BF8FF;
-        font-size: 1.8rem;
-    }
-
-    .rotation.device {
-        display:block;
-        text-wrap: wrap;
-        width: 70%;
-        justify-self: center;
-        border: 5px solid #FF3B7F;
-        border-radius: 30px;
-        background-color: #281A34;
-        padding: 20px;
-    }
-}
 
 #unity-canvas {
     width: calc(100vw - 25px*2); 
